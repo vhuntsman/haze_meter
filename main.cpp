@@ -79,6 +79,7 @@ int main()
                 
                 if (slre_match(&reHighestPSI, capPSIVal[1].ptr, capPSIVal[1].len, capHighestPSI)) {
                     printf("Highest PSI = %.*s\n", capHighestPSI[1].len, capHighestPSI[1].ptr);
+                    memset(chHighestPSI, ' ', sizeof(chHighestPSI));        //reset the buffer with whitespace
                     strncpy(chHighestPSI, capHighestPSI[1].ptr, capHighestPSI[1].len);                    
                 }
                 
@@ -86,28 +87,26 @@ int main()
                 printf("Highest PSI converted = %d\n", u16HighestPSI);
                 
                 if (u16HighestPSI > 300) {
-                    pwmR = 0.16;
-                    pwmG = 1;
-                    pwmB = 0.909;
+                    pwmR = 0.0;
+                    pwmG = 1.0;
+                    pwmB = 1.0;
                 } else if (u16HighestPSI > 200) {
-                    pwmR = 0;
-                    pwmG = 0.35;
-                    pwmB = 1;
+                    pwmR = 0.0;
+                    pwmG = 0.4;
+                    pwmB = 1.0;
                 } else if (u16HighestPSI > 100) {
-                    pwmR = 0;
-                    pwmG = 0.145;
-                    pwmB = 0.741;
+                    pwmR = 0.0;
+                    pwmG = 0.0;
+                    pwmB = 1.0;
                 } else if (u16HighestPSI > 50) {
-                    pwmR = 1;
-                    pwmG = 0.564;
-                    pwmB = 0.369;                
+                    pwmR = 1.0;
+                    pwmG = 0.56;
+                    pwmB = 0.37;                
                 } else {
-                    pwmR = 0.722;
-                    pwmG = 0.392;
-                    pwmB = 0.992;                     
+                    pwmR = 0.87;
+                    pwmG = 0.04;
+                    pwmB = 0.94;                     
                 }
-                
-                                 
             }
             else
             {
