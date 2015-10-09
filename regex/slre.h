@@ -49,6 +49,10 @@
 #ifndef SLRE_HEADER_DEFINED
 #define	SLRE_HEADER_DEFINED
 
+#if defined (__GNUC__)
+#pragma GCC optimize("O0")
+#endif
+
 /*
  * Compiled regular expression
  */

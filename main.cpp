@@ -51,10 +51,13 @@ int main()
     eth.init(); //Use DHCP
     
     eth.connect();
-    slre_compile(&reTimeStamp,"<pubDate>(.*?)</pubDate>");    
-    slre_compile(&rePSIVal," <psi>(.*?)</psi>");
-    slre_compile(&reHighestPSI,": .*-(.*?) (");
+
     while(1) {
+    
+       slre_compile(&reTimeStamp,"<pubDate>(.*?)</pubDate>");    
+       slre_compile(&rePSIVal," <psi>(.*?)</psi>");
+       slre_compile(&reHighestPSI,": .*-(.*?) (");
+       
        u8MinuteCounter++;
        if (u8MinuteCounter == 5)
        {

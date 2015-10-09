@@ -8,6 +8,10 @@
  * this stuff is worth it, you can buy me a beer in return.
  */
 
+#if defined (__GNUC__)
+#pragma GCC optimize("O0")
+#endif
+
 #include <stdio.h>
 #include <assert.h>
 #include <ctype.h>
